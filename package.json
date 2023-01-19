@@ -10,16 +10,28 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:oda-studio.helloWorld"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "oda-studio.helloWorld",
-        "title": "Hello World"
-      }
-    ]
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "oda_studio_activitybar",
+          "title": "ODA-Studio",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "oda_studio_activitybar": [
+        {
+          "id": "oda_studio_inspector",
+          "name": "Inspector",
+          "contextualTitle": "ODA-Inspector"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
